@@ -1,4 +1,4 @@
-# ID 80232162
+# ID 80342698
 from math import floor
 
 
@@ -12,11 +12,8 @@ class Stack:
         self.size += 1
 
     def pop(self):
-        if self.size != 0:
-            self.size -= 1
-            return self.items.pop()
-        else:
-            return 'error'
+        self.size -= 1
+        return self.items.pop()
 
     def plus(self):
         x, y = self.pop(), self.pop()
