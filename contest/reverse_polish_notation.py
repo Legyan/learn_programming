@@ -1,5 +1,6 @@
-# ID 80342698
+# ID 80424446
 from math import floor
+import re
 
 
 class Stack:
@@ -15,35 +16,37 @@ class Stack:
         self.size -= 1
         return self.items.pop()
 
-    def plus(self):
-        x, y = self.pop(), self.pop()
-        self.push(x + y)
 
-    def minus(self):
-        x, y = self.pop(), self.pop()
-        self.push(y - x)
-
-    def multiply(self):
-        x, y = self.pop(), self.pop()
-        self.push(x * y)
-
-    def divide(self):
-        x, y = self.pop(), self.pop()
-        self.push(floor(y / x))
+def get_expression():
+    expression = input().split()
+    for symbol in expression:
+        try:
+            number = int(symbol)
+            if abs(number) > 10000:
+                raise ValueError(
+                    'Numbers must not exceeding 10000 in absolute value'
+                )
+        except ValueError:
+            if not re.fullmatch(r'[+-/*]{1}', symbol):
+                raise ValueError(
+                    'Symbol must be integer number or arithmetic symbol'
+                )
+    return expression
 
 
 def main():
-    expression = input().split()
+    expression = get_expression()
     stack = Stack()
-    operations = {
-        '+': stack.plus,
-        '-': stack.minus,
-        '*': stack.multiply,
-        '/': stack.divide,
+    OPERATIONS = {
+        '+': lambda x, y: x + y,
+        '-': lambda x, y: y - x,
+        '*': lambda x, y: x * y,
+        '/': lambda x, y: floor(y / x),
     }
     for symbol in expression:
-        if symbol in operations:
-            operations[symbol]()
+        if symbol in OPERATIONS:
+            x, y = stack.pop(), stack.pop()
+            stack.push(OPERATIONS[symbol](x, y))
         else:
             stack.push(int(symbol))
     print(stack.pop())
