@@ -10,6 +10,7 @@ def timer(func):
         return result
     return wrapper
 
+
 @timer
 def test_func():
     time.sleep(1)

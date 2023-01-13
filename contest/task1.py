@@ -8,4 +8,5 @@ def equalizer(n, storages):
             return -1
     return storages[-1] - storages[0]
 
+
 print(equalizer(n, storages))

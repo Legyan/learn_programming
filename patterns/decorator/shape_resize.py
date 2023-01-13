@@ -30,21 +30,23 @@ class ColoredShape:
 
     def __str__(self):
         if isinstance(self.shape, Circle):
-            return f'A circle of radius {self.shape.radius} has the color {self.color}'
+            return (f'A circle of radius {self.shape.radius} '
+                    f'has the color {self.color}')
         else:
-            return f'A square with side {self.shape.side} has the color {self.color}'
+            return (f'A square with side {self.shape.side} '
+                    f'has the color {self.color}')
 
 
 if __name__ == '__main__':
     shape, size, color = input().split()
-    if shape=='c':
+    if shape == 'c':
         circle = ColoredShape(Circle(int(size)), color)
         result1 = str(circle)
         circle.resize(2)
         result2 = str(circle)
         print(f'{result1} {result2}')
 
-    if shape=='s':
+    if shape == 's':
         square = ColoredShape(Square(int(size)), color)
         result1 = str(square)
         square.resize(2)

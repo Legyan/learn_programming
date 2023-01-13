@@ -11,12 +11,10 @@ groups = int(input())
 left_places = [0, 1, 2]
 right_places = [4, 5, 6]
 
-places = {'left':
-              {'window': left_places,
-               'aisle': left_places[::-1]},
-          'right':
-              {'window': right_places[::-1],
-               'aisle': right_places}}
+places = {'left': {'window': left_places,
+                   'aisle': left_places[::-1]},
+          'right': {'window': right_places[::-1],
+                    'aisle': right_places}}
 
 alphabet = 'ABC_DEF'
 
@@ -39,7 +37,7 @@ def find_in_row(num, side, position, row):
 
 
 def print_answer(row, sought_places):
-    message = f"Passengers can take seats:"
+    message = 'Passengers can take seats:'
     for place in sorted(sought_places):
         message += f' {row+1}{alphabet[place]}'
     print(message)
@@ -50,7 +48,7 @@ def print_answer(row, sought_places):
 for number_of_group in range(groups):
     num, side, position = input().split(' ')
     for i in range(n):
-        if find_in_row(int(num), side,position, i):
+        if find_in_row(int(num), side, position, i):
             break
     else:
         print('Cannot fulfill passengers requirements')

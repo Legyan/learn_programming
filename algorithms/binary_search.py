@@ -30,6 +30,7 @@ def search_rec(list, item):
         except Exception:
             return None
 
+
 if __name__ == '__main__':
     lst = list(range(0, 100, 1))
     print(search(lst, 32))

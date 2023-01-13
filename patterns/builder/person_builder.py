@@ -10,8 +10,10 @@ class Person:
         self.annual_income = None
 
     def __str__(self) -> str:
-        return (f'Address {self.street_address}, {self.post_code}, {self.city}\n'
-                f'Employment ad {self.company_name} as {self.position} earning {self.annual_income}')
+        return (f'Address {self.street_address}, '
+                f'{self.post_code}, {self.city}\n'
+                f'Employment ad {self.company_name} '
+                f'as {self.position} earning {self.annual_income}')
 
 
 class PersonBuilder:

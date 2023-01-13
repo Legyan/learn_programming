@@ -2,7 +2,7 @@ def qsort(lst):
     from random import uniform
     mid = int(uniform(0, len(lst)))
     low = []
-    high =[]
+    high = []
     if len(lst) < 2:
         return lst
     for i in range(len(lst)):
@@ -15,8 +15,9 @@ def qsort(lst):
     low.append(lst[mid])
     return low + qsort(high)
 
+
 if __name__ == '__main__':
     from random import shuffle
-    lst = list(range(0,100,1))
+    lst = list(range(0, 100, 1))
     shuffle(lst)
     print(qsort(lst))

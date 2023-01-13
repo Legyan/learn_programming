@@ -1,5 +1,6 @@
 num = int(input())
 
+
 def factorization(num):
     factors = []
     divisor = 2
@@ -12,5 +13,6 @@ def factorization(num):
     else:
         factors.append(int(num))
     return ' '.join([str(x) for x in factors])
+
 
 print(factorization(num))

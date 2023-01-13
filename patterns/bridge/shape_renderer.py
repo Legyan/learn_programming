@@ -8,6 +8,7 @@ class Renderer(ABC):
     def render_square(self, side):
         pass
 
+
 class VectorRenderer(Renderer):
     def render_circle(self, radius):
         print(f'Drawing a circle of radius {radius}')

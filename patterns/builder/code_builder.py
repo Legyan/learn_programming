@@ -5,7 +5,9 @@ class CodeBuilder:
         self.elements = [f'class {self.root_name}:']
 
     def add_field(self, type, name):
-        self.elements.append(self.indent * 2 * ' ' + f'self.{type} = \'{name}\'')
+        self.elements.append(
+            self.indent * 2 * ' ' + f'self.{type} = \'{name}\''
+        )
         return self
 
     def __str__(self):
@@ -20,7 +22,8 @@ class CodeBuilder:
 if __name__ == '__main__':
     cb_empty = CodeBuilder('Foo')
     print(cb_empty)
-    cb_full = CodeBuilder('Person').add_field('name', 'Lev').add_field('age', '0')
+    cb_full = CodeBuilder('Person').add_field(
+        'name', 'Lev').add_field('age', '0')
     print(cb_full)
 
 

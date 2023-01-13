@@ -16,7 +16,7 @@ class Neuron(Connectable):
     def __init__(self, name):
         self.name = name
         self.inputs = []
-        self.outputs= []
+        self.outputs = []
 
     def __str__(self):
         return (f'{self.name} - '
@@ -25,6 +25,7 @@ class Neuron(Connectable):
 
     def __iter__(self):
         yield self
+
 
 class NeuronLayer(list, Connectable):
     def __init__(self, name, count):
@@ -35,6 +36,7 @@ class NeuronLayer(list, Connectable):
 
     def __str__(self):
         return f'{self.name} with {len(self)} neurons'
+
 
 if __name__ == '__main__':
     neuron1 = Neuron('n1')

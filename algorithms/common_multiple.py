@@ -8,5 +8,6 @@ def cm(a, b):
     else:
         return cm(b, x)
 
-if __name__ =='__main__':
-    print(cm(12,16))
+
+if __name__ == '__main__':
+    print(cm(12, 16))
