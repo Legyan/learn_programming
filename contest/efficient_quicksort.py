@@ -1,10 +1,13 @@
-#ID 81277542
 from random import randint
-
+from typing import List
 
 class Participant:
+    """Участник соревнования"""
     __slots__ = ['name', 'tasks', 'fine']
-    def __init__(self, name, tasks, fine):
+    # slots тут используется для более быстрого доступа к атрибутам,
+    # чтобы выполнение программы укладывалось в time limit.
+
+    def __init__(self, name: str, tasks: int, fine: int):
         self.name = name
         self.tasks = tasks
         self.fine = fine
@@ -33,24 +36,36 @@ class Participant:
         return self.name
 
 
-def get_input():
-    n = int(input())
+def get_input() -> List[Participant]:
+    """Получение и валидация входных данных"""
+    try:
+        n = int(input())
+    except ValueError:
+        raise ValueError(
+            'The number of participant must be integer'
+        )
     if not 1 <= n <= 100000:
         raise ValueError(
             'The number of participant must be '
             'in the range from 1 to 100_000'
         )
     table = []
-    for i in range(n):
+    for _ in range(n):
         name, tasks, fine = input().split()
-
+        try:
+            tasks = int(tasks)
+            fine = int(fine)
+        except ValueError:
+            raise ValueError(
+                'The number of tasks and fines must be integer'
+            )
         if len(name) > 20:
             raise ValueError(
                 'String length must be no more '
                 'than 20 characters'
             )
-        if not 0 <= int(tasks) <= 10 ** 9 or \
-                not 0 <= int(fine) <= 10 ** 9:
+        if (not 0 <= tasks <= 10 ** 9 or
+                not 0 <= fine <= 10 ** 9):
             raise ValueError(
                 'The number of solved problems and fine must be '
                 'in the range from 0 to 1_000_000_000'
@@ -59,7 +74,8 @@ def get_input():
     return table
 
 
-def quicksort(table, start, end):
+def quicksort(table: List[Participant], start: int, end: int) -> None:
+    """Быстрая сортировка списка на месте"""
     if end - start >= 1:
         pivot_index = randint(start, end)
         table[start], table[pivot_index] = table[pivot_index], table[start]
@@ -79,10 +95,12 @@ def quicksort(table, start, end):
         quicksort(table, start, right)
         quicksort(table, right + 1, end)
 
-def main():
+
+def main() -> None:
     table = get_input()
     quicksort(table, 0, len(table) - 1)
     print(*table, sep='\n')
+
 
 if __name__ == '__main__':
     main()
