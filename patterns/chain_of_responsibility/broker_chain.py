@@ -40,8 +40,8 @@ class CreatureModifier(ABC):
 
 class DoubleAttackModified(CreatureModifier):
     def handle(self, sender, query):
-        if sender.name == self.creature.name and \
-            query.what_to_query == WhatToQuery.ATTACK:
+        if (sender.name == self.creature.name and
+                query.what_to_query == WhatToQuery.ATTACK):
             query.value *= 2
 
     def __enter__(self):
