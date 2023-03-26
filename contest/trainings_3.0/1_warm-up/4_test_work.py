@@ -10,6 +10,7 @@ def test_work(n, k, line, variant):
     else:
         return -1
 
+
 if __name__ == '__main__':
     n = int(input())
     k = int(input())

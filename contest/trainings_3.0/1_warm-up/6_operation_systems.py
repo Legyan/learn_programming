@@ -13,6 +13,7 @@ def oper_sys(N, M):
         seg_set.add((seg_start, seg_stop))
     return len(seg_set)
 
+
 if __name__ == '__main__':
     m = int(input())
     n = int(input())

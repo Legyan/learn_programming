@@ -13,11 +13,12 @@ def find_stickers(stickers, requests):
         else:
             print(res)
 
+
 if __name__ == '__main__':
     N = int(input())
     stickers_set = set()
     stickers_list = []
-    all_stickers =[int(x) for x in input().split()]
+    all_stickers = [int(x) for x in input().split()]
     for stick in all_stickers:
         if stick not in stickers_set:
             stickers_set.add(stick)

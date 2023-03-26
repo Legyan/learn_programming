@@ -1,2 +1,10 @@
-# learnPyhon
-repository to save interesting and useful tasks
+# Learn Python
+
+Репозиторий для изучения программирования на Python. Здесь хранятся примеры реализации алгоритмов и паттернов проектирования, задачи по алгоритмам и примеры применения некоторых возможностей Python.
+
+## Содержание
+
+1. [Алгоритмы](/algorithms)
+2. [Задачи](/contest)
+2. [Паттерны проектирования](/patterns)
+3. [Исследование python](/python_exploration)

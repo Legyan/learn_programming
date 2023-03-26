@@ -17,6 +17,7 @@ def drunk_game(first, second):
             return 'first', i
     return 'botva'
 
+
 if __name__ == '__main__':
     first_player = deque([int(x) for x in input().split()])
     second_player = deque([int(x) for x in input().split()])

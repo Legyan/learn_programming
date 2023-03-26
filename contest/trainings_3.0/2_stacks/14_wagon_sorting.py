@@ -14,6 +14,7 @@ class Stack:
     def size(self):
         return len(self.items)
 
+
 n = int(input())
 wagons = [int(x) for x in input().split()]
 stack = Stack()

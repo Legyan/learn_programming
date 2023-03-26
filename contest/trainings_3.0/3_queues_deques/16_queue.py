@@ -3,6 +3,7 @@ class Item:
         self.next = next
         self.value = value
 
+
 class Queue:
     def __init__(self):
         self.first = None

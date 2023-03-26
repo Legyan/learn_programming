@@ -34,4 +34,4 @@ if __name__ == '__main__':
     A = input()
     B = input()
     C = input()
-    print(sync_time(A,B,C))
+    print(sync_time(A, B, C))
