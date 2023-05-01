@@ -1,4 +1,4 @@
-def twoSum(N, lst):
+def two_sum(N, lst):
     for i in range(N):
         for j in range(i+1, N):
             if lst[i] + lst[j] == x:
@@ -7,7 +7,7 @@ def twoSum(N, lst):
         return None
 
 
-def twoSum_2_point(X, lst):
+def two_sum_2_point(X, lst):
     low = 0
     high = len(lst) - 1
     while low < high:
@@ -27,5 +27,5 @@ if __name__ == '__main__':
     n = 6
     lst = [1, 3, 5, 6, 8, 9]
     x = 11
-    print(twoSum(n, lst))
-    print(twoSum_2_point(x, lst))
+    print(two_sum(n, lst))
+    print(two_sum_2_point(x, lst))
